@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Button generator</title>
+</head>
+<body>
+
+<main>
+    <button id="test-button">Default Label</button>
+    <hr>
+    <div id="container">
+
+        <label> Button Label:
+            <input type="text" id="btn-label" name="btn" required>
+        </label>
+        <label> Font Size:
+            <input type="number" id="font-size" name="font-size" value="16" required>
+        </label>
+        <label> Font Color:
+            <input type="color" id="font-color" name="font-color" value="#dddddd" required>
+        </label>
+
+
+        <label>Padding Top-Right-Bottom-Left:
+            <input type="number" id="top" class="padding" required>-
+            <input type="number" id="right" class="padding" required>-
+            <input type="number" id="bottom" class="padding" required>-
+            <input type="number" id="left" class="padding" required>
+        </label>
+        <label> Background Color:
+            <input type="color" id="bg-color" name="bg-color" required>
+        </label>
+
+        <label> Border Color:
+            <input type="color" id="border-color" name="border-color" required>
+        </label>
+        <label> Border Width:
+            <input type="number" id="border-width" name="border-width" required>
+        </label>
+        <label> Border Radius:
+            <input type="number" id="border-radius" name="border-radius" required>
+        </label>
+
+    </div>
+
+    <button>Generate Code</button>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,35 +1,271 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap');
+
 body {
-    background-image: linear-gradient(45deg, #bfbfbf, transparent);
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ff9d00;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 main {
-    width: 1140px;
+    width: 50%;
     background-color: #ffffff;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 10% auto;
     text-align: center;
     padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 10px #000;
 }
 
-button {
-    margin: 20px;
+#container {
+    width: 100%;
+    padding: 20px 0 0 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+label {
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
+
+span {
+    margin-right: 5px;
 }
 
 input {
     outline: unset;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
 }
 
-label {
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-right: 15px;
+input[type="color"] {
+    cursor: pointer;
 }
 
-.padding {
+input[type="number"] {
     width: 50px;
+}
+
+input[type="text"], input[type="number"] {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+button {
+    outline: unset;
+}
+
+#test-button {
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#generate {
+    border: 0;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: #000;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#generate:hover {
+    opacity: 0.7;
+}
+
+#result {
+    background-color: #fff;
+    color: #000;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px #000;
+    transform: translate(-50%,-50%);
+    z-index: 50;
+    padding: 20px;
+    letter-spacing: 1.2px;
+    line-height: 1.4;
+}
+
+#result h2 {
+    margin-bottom: 0;
+}
+
+#result p {
+    margin: 0;
+}
+
+#cssText {
+    text-align: justify;
+
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0.8;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#close {
+    cursor: pointer;
+    position: absolute;
+    top: 6%;
+    right: 3%;
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: all 0.2s;
+}
+
+#bar1, #bar2 {
+    background-color: #000;
+    width: 22px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+}
+
+#bar1 {
+    transform: rotate(45deg);
+}
+
+#bar2 {
+    transform: rotate(315deg);
+}
+
+#close:hover {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 1280px) {
+    span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    #container {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    label {
+        margin-bottom: 20px;
+    }
+
+    label:nth-child(4) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    label:nth-child(4) span {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #container {
+        width: 100%;
+    }
+    span {
+        font-size: 14px;
+    }
+
+    main {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #result {
+        width: 70%;
+    }
+
+    #result p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 88%;
+    }
+    label:first-of-type {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    label:first-of-type span {
+        margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+        width: 40px;
+    }
+
+    #result {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #result p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    #result {
+        width: 86%;
+    }
+}
+
+
+@media screen and (max-width: 414px) {
+    main {
+        width: 90%;
+        padding: 20px 5px;
+    }
+
+    label {
+        margin-right: 0;
+    }
+    
+    #result, #cssText {
+        text-align: center;
+    }
+
+    #result h2 {
+        margin: 0;
+    }
+
 }

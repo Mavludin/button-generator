@@ -3,51 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <title>Button generator</title>
 </head>
 <body>
 
 <main>
-    <button id="test-button">Default Label</button>
+
+    <div><button id="test-button">Default Label</button></div>
     <hr>
+
     <div id="container">
 
-        <label> Button Label:
-            <input type="text" id="btn-label" name="btn" required>
+        <label> <span>Button Label:</span>
+            <input type="text" id="btn-label" name="btn" value="" autocomplete="off" required>
         </label>
-        <label> Font Size:
-            <input type="number" id="font-size" name="font-size" value="16" required>
+        <label> <span>Font Size:</span>
+            <input type="number" id="font-size" name="font-size" min="8" max="50" value="16" autocomplete="off" required>
         </label>
-        <label> Font Color:
-            <input type="color" id="font-color" name="font-color" value="#dddddd" required>
-        </label>
-
-
-        <label>Padding Top-Right-Bottom-Left:
-            <input type="number" id="top" class="padding" required>-
-            <input type="number" id="right" class="padding" required>-
-            <input type="number" id="bottom" class="padding" required>-
-            <input type="number" id="left" class="padding" required>
-        </label>
-        <label> Background Color:
-            <input type="color" id="bg-color" name="bg-color" required>
+        <label> <span>Font Color:</span>
+            <input type="color" id="font-color" name="font-color" value="#000000" autocomplete="off" required>
         </label>
 
-        <label> Border Color:
-            <input type="color" id="border-color" name="border-color" required>
+        <label> <span>Padding Top-Right-Bottom-Left:</span>
+            <div>
+                <input type="number" id="top" class="padding-box" min="0" max="24" value="1" autocomplete="off" required> -
+                <input type="number" id="right" class="padding-box" min="0" max="48" value="6" autocomplete="off" required> -
+                <input type="number" id="bottom" class="padding-box" min="0" max="24" value="1" autocomplete="off" required> -
+                <input type="number" id="left" class="padding-box" min="0" max="48" value="6" autocomplete="off" required>
+            </div>
         </label>
-        <label> Border Width:
-            <input type="number" id="border-width" name="border-width" required>
+        <label> <span>Background Color:</span>
+            <input type="color" id="bg-color" name="bg-color" autocomplete="off" required>
         </label>
-        <label> Border Radius:
-            <input type="number" id="border-radius" name="border-radius" required>
+
+        <label> <span>Border Color:</span>
+            <input type="color" id="border-color" name="border-color" value="#dddddd" autocomplete="off" required>
+        </label>
+        <label> <span>Border Width:</span>
+            <input type="number" id="border-width" name="border-width" min="0" max="50" value="0" autocomplete="off" required>
+        </label>
+        <label> <span>Border Radius:</span>
+            <input type="number" id="border-radius" name="border-radius" min="0" max="50" value="0" autocomplete="off" required>
         </label>
 
     </div>
 
-    <button>Generate Code</button>
+    <hr>
+    <div><button id="generate">Generate code</button></div>
 </main>
 
-<script src="script.js"></script>
+<div id="result">
+
+    <h2>HTML:</h2>
+    <p id="htmlText"></p>
+    <h2>CSS:</h2>
+    <p id="cssText"></p>
+
+    <div id="close">
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+    </div>
+
+</div>
+
+<div id="overlay"></div>
+
 </body>
 </html>
